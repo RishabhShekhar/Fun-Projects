@@ -1,4 +1,7 @@
 import cv2
+import os
+import datetime
+import shutil
 
 # Load the cascade
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
@@ -7,10 +10,12 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_fronta
 cap = cv2.VideoCapture(0)
 # To use a video file as input
 # cap = cv2.VideoCapture('filename.mp4')
+os.mkdir("Frames")
 
 while True:
     # Read the frame
     _, img = cap.read()
+    cv2.imwrite('Frames/face_' + str(datetime.datetime.now()) + '.jpg', img)
 
     # Convert to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -32,3 +37,4 @@ while True:
 
 # Release the VideoCapture object
 cap.release()
+shutil.rmtree("Frames")
