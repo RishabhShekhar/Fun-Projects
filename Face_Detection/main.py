@@ -8,13 +8,17 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_fronta
 
 # To capture video from webcam.
 cap = cv2.VideoCapture(0)
+
 # To use a video file as input
 # cap = cv2.VideoCapture('filename.mp4')
+
 os.mkdir("Frames")
 
 while True:
     # Read the frame
     _, img = cap.read()
+
+    # Write the frame
     cv2.imwrite('Frames/face_' + str(datetime.datetime.now()) + '.jpg', img)
 
     # Convert to grayscale
