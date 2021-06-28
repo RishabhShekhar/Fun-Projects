@@ -41,6 +41,7 @@ while True:
 
     # Blue color in BGR
     color = (0, 0, 255)
+
     if len(faces) != 0 and (not flag):
         Flag = True
         start_time = time.time()
@@ -48,7 +49,7 @@ while True:
         start_time = -99999999
         flag = False
 
-    if time.time() - start_time < 3:
+    if time.time() - start_time <= 3:
         color = (0, 255, 0)
 
     # Line thickness of 2 px
@@ -61,8 +62,6 @@ while True:
     # Displaying the image
     cv2.imshow('img', img)
 
-    # Display
-    cv2.imshow('img', img)
 
     # Stop if escape key is pressed
     k = cv2.waitKey(30) & 0xff
