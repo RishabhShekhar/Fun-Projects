@@ -1,0 +1,28 @@
+/* How to use class */
+.firstDiv{
+  color:blue;
+}
+.secondDiv{
+  color: red;
+}
+/* how to use id */
+#singledout{
+  color: green;
+  text-decoration: line-through;
+}
+/* *-->it can overwrite all elements except id */
+/* *{
+  color: black;
+} */
+h3 + ol{
+  border: 4px dotted purple;
+}
+
+li a{
+  color:red;
+}
+
+li a[href="http://www.google.com"]{
+  color: blue;
+  border: 2px solid orange;
+}

@@ -1,0 +1,28 @@
+td{
+  height: 300px;
+  width:150px;
+  border: 6px solid white;
+}
+table{
+  margin: auto;
+} 
+h1{
+  text-align: center;
+  font-family: 'Metal Mania', cursive;
+
+}
+#one{
+  background-color: #264653;
+}
+#two{
+  background-color: #2a9d8f;
+}
+#three{
+  background-color: #e9c46a;
+}
+#four{
+  background-color: #f4a261;
+}
+#five{
+  background-color: #e76f51;
+}
