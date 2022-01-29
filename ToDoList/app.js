@@ -11,18 +11,20 @@ app.use(express.static("public"));
 
 var items = ["Buy Food", "Eat Food", "Cook Food"];
 
+var workitems = [];
+
 app.get("/", function(req, res){
     const today = new Date();
 
-    var options = {
+    let options = {
         weekday: "long",
         day: "numeric",
         month: "long",
     };
 
-    var day = today.toLocaleDateString("en-US", options);
+    let day = today.toLocaleDateString("en-US", options);
 
-    res.render("list", {kindOfDay:day, newitems:items});
+    res.render("list", {kindOfDay:day, newitems:items, buttontitle:"list"});
 
 });
 
@@ -30,9 +32,20 @@ app.post("/", function(req, res){
 
     item = req.body.item;
 
-    items.push(item);
+    if(req.body.button == "work"){
+        workitems.push(item);
+        res.redirect("/work");
+    }
+    else{
+        items.push(item);
+        res.redirect("/");
+    }
 
-    res.redirect("/");
+})
+
+app.get("/work", function(req, res){
+
+    res.render("list", {kindOfDay:"Work List", newitems:workitems ,buttontitle:"work"})
 
 })
 
