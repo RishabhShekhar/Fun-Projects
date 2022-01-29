@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const res = require("express/lib/response");
 
 app = express();
 
@@ -45,7 +46,13 @@ app.post("/", function(req, res){
 
 app.get("/work", function(req, res){
 
-    res.render("list", {kindOfDay:"Work List", newitems:workitems ,buttontitle:"work"})
+    res.render("list", {kindOfDay:"Work List", newitems:workitems ,buttontitle:"work"});
+
+})
+
+app.get("/about", function(req,res){
+    
+    res.render("about")
 
 })
 
